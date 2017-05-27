@@ -9,9 +9,6 @@ const Page = ({ title }) => (
         <img src={logo} className="App-logo" alt="logo" />
         <h2>{title}</h2>
       </div>
-      <p className="App-intro">
-        This is the {title} page.
-      </p>
       <p>
         <Link to="/">Taco Tuesday</Link>
       </p>
