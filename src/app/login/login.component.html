@@ -1,3 +1,10 @@
-<p>
-  login works!
-</p>
+<div class="row">
+	<i class="large material-icons">lock_outline</i>
+
+	<span class="error" *ngIf="error">{{error}}</span>
+
+	<a class="btn" (click)="loginGoogle()" id="google">Login With <i class="fa fa-google"></i></a>
+	<a class="btn" routerLink="/login-email" id="email">Email</a>
+
+	<a class="btn alc" routerLink="/signup" routerLinkActivate="active"><strong>Create New Account</strong></a>
+</div>
