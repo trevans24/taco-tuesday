@@ -26,6 +26,19 @@ const login = document.getElementById('login');
 const signup = document.getElementById('signup');
 const signout = document.getElementById('signout');
 
+// LOGIN EVENT
+login.addEventListener('click', e => {
+
+	// GET EMAIL AND PASSWORD
+	const email = email.value;
+	const password = password.value;
+	const auth = firebase.auth();
+
+	// SIGN IN
+	const promise = auth.signInWithEmailAndPassword(email, password);
+	promise.catch(err => console.log(err.message));
+});
+
 }());
 
 
