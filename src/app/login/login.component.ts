@@ -15,12 +15,28 @@ export class LoginComponent implements OnInit {
 error: any;
 constructor(public af: AngularFire, private router: Router) {
 // CHECK IF CURRENTLY LOGGED IN IF SO SEND TO HOME
-this.af.auth.subscribe(auth => {
-		if(auth) {
-			this.router.navigateByUrl('/members');
-		}
-	});
-}
+	this.af.auth.subscribe(auth => {
+			if(auth) {
+				this.router.navigateByUrl('/members');
+			}
+		});
+	}
+// LOGIN ON GOOGLE BUTTON
+	loginGoogle() {
+		this.af.auth.login({
+			provider: AuthProviders.Google,
+			// POPUP for Authentication Window
+			method: AuthMethods.Popup,
+		})
+		.then((success) => {
+			// IF SUCCESS NAVIGATE TO MEMBERS
+			this.router.navigate(['/members']);
+		})
+		.catch((err) => {
+			// IF ERROR THEN CATCH ERROR
+			this.error = err;
+		})
+	}
 
   ngOnInit() {
   }
