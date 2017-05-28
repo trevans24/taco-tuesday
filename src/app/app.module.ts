@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
+import { MembersComponent } from './members/members.component';
 
 // Initialize Firebase
 export const firebaseConfig = {
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     AppComponent,
     LoginComponent,
     EmailComponent,
-    SignupComponent
+    SignupComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
