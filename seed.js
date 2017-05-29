@@ -3,7 +3,7 @@
 // REQUIRE DB
 const db = require('./models');
 
-const tacoList = [
+let tacoList = [
 {
 	name: "Beef Taco Boats",
 	shell: "Hard",

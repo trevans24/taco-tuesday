@@ -35,3 +35,53 @@ app.get('/list/:id', (req, res) => {
 	});
 });
 
+// POST TACO
+app.post('/list', (req, res) => {
+	let newTaco = new db.Taco({
+		name: req.body.name,
+		shell: req.body.shell,
+		meat: req.body.meat,
+		spicy: req.body.spicy,
+		toppings: req.body.toppings,
+		recipe: req.body.recipe,
+		picture: req.body.picture
+	});
+	newTaco.save((err, taco) => {
+		if(err) {
+			console.log('New Taco Error: ', err);
+		}
+		res.json(taco);
+	});
+});
+
+// DELETE TACO
+app.delete('/list/:id', (req, res) => {
+	db.Taco.remove({_id: req.body.id}, (err, deletedTaco) =>{
+		if(err) {
+			console.log('Delete Taco Error: ', err);
+		}
+		res.json('Deleted');
+	});
+});
+
+// PUT TACO
+app.put('/list/:id', (req, res) => {
+	db.Taco.findOne({_id: req.params.id}, (err, foundTaco) => {
+		if(err) {
+			console.log('Update Taco Error: ', err);
+		}
+		foundTaco.name = req.params.name;
+		foundTaco.shell = req.body.shell;
+		foundTaco.meat = req.body.meat;
+		foundTaco.spicy = req.body.spicy;
+		foundTaco.toppings = req.body.toppings;
+		foundTaco.recipe = req.body.recipe;
+		foundTaco.picture = req.body.picture;
+		foundTaco.save((err, taco) => {
+			if(err) {
+				console.log('Update Taco Save Error: ', err);
+			}
+			res.json(taco);
+		});
+	});
+});
