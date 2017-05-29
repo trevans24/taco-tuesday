@@ -1,0 +1,14 @@
+.sebm-google-map-container {
+  height: 80vh;
+}
+
+.map {
+	margin-top: -5%;
+	background-color: #3ABEFF;
+}
+
+.buttons {
+	background-color: #3ABEFF;
+	height: 20vh;
+	width: 100vw;
+}

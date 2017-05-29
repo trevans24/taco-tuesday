@@ -1,3 +1,18 @@
-<p>
-  find works!
-</p>
+<div class="map">
+	<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [zoomControl]="false">
+	  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+	</agm-map>
+</div>
+
+<div class="container center buttons">
+  <div class="fixed-action-btn horizontal click-to-toggle">
+	  <a class="btn-floating btn-large waves-effect waves-light red">
+	    <i class="material-icons">dashboard</i>
+	  </a>
+	  <ul>
+	  	<li><a class="btn-floating waves-effect waves-light red" routerLink="/"><i class="fa fa-home"></i></a></li>
+	    <li><a class="btn-floating waves-effect waves-light red" routerLink="/list"><i class="material-icons">list</i></a></li>
+	    <li><a class="btn-floating waves-effect waves-light red" routerLink="/random"><i class="fa fa-random"></i></a></li>
+	   </ul>
+  </div>
+</div>

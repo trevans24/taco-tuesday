@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { FindComponent } from './find/find.component';
 import { ListComponent } from './list/list.component';
 import { RandomComponent } from './random/random.component';
+// MAP
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,10 @@ import { RandomComponent } from './random/random.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCPqCXeTyW5s4MiWTf6kzwm-r58azGK18Q'
+    }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
