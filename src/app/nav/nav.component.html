@@ -1,10 +1,16 @@
-<div class="fixed-action-btn horizontal click-to-toggle toolbar">
-  <a class="btn-floating btn-large red">
-    <i class="material-icons">menu</i>
-  </a>
-  <ul>
-    <li><a routerLink="/find">Find</a></li>
-    <li><a outerLink="/list">List</a></li>
-    <li><a routerLink="/random">Random</a></li>
-  </ul>
-</div>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo"><img src="../../logo.svg"></a>
+    <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li><a routerLink="/find">Find</a></li>
+      <li><a routerLink="/list">List</a></li>
+      <li><a routerLink="/random">Random</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a routerLink="/find">Find</a></li>
+      <li><a routerLink="/list">List</a></li>
+      <li><a routerLink="/random">Random</a></li>
+    </ul>
+  </div>
+</nav>
