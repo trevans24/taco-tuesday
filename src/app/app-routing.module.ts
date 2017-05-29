@@ -1,17 +1,31 @@
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { FindComponent } from './find/find.component';
+import { ListComponent } from './list/list.component';
+import { RandomComponent } from './random/random.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'login',
+		redirectTo: 'home',
 		pathMatch: 'full'
 	},
 	{
-		path: 'login',
-		component: LoginComponent
+		path: 'home',
+		component: HomeComponent
+	},
+	{
+		path: 'find',
+		component: FindComponent
+	},
+	{
+		path: 'list',
+		component: ListComponent
+	},
+	{
+		path: 'random',
+		component: RandomComponent
 	}
 ]
 

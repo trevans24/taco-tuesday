@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { FindComponent } from './find/find.component';
+import { ListComponent } from './list/list.component';
+import { RandomComponent } from './random/random.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     HeaderComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    FindComponent,
+    ListComponent,
+    RandomComponent
   ],
   imports: [
     BrowserModule,

@@ -3,26 +3,12 @@
 		<h5>Welcome to Taco Tuesday</h5>
 		<i class="large material-icons lock">lock_outline</i>
 	</div>
-	<span class="error" *ngIf="error">{{error}}</span>
 	<div class="row">
-		<form>
-			<div class="container center">
-				<div class="input-field col s12">
-					<input id="email" type="email" class="validate" placeholder="email@abc.com">
-				</div>
-			</div>
-			<div class="container center">
-				<div class="input-field col s12">
-					<input id="password" type="password" class="validate" placeholder="password">
-				</div>
-				<div class="center">
-					<a class="btn" (click)="login(form)">Login</a>
-					<a class="btn" (click)="signup(form)">Sign Up</a>
-				</div>
-			</div>
-		</form>
-	</div>
-	<div class="row center">
-		<a class="btn" (click)="loginGoogle()" id="google">Login With  <i class="fa fa-google"></i></a>
+		<div class="center">
+			<a class="btn" routerLink="/">Home</a>
+			<a class="btn" routerLink="/find">Find</a>
+			<a class="btn" routerLink="/list">List of Tacos</a>
+			<a class="btn" routerLink="/random">Random</a>
+		</div>
 	</div>
 </div>
