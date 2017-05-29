@@ -2,37 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { EmailComponent } from './email/email.component';
-import { SignupComponent } from './signup/signup.component';
-import { MembersComponent } from './members/members.component';
-
-// Initialize Firebase
-export const firebaseConfig = {
-  apiKey: "AIzaSyBM3O3__xXZwe4vCxtoj2DmybqbXKuChvQ",
-  authDomain: "pwa-taco-tuesday.firebaseapp.com",
-  databaseURL: "https://pwa-taco-tuesday.firebaseio.com",
-  projectId: "pwa-taco-tuesday",
-  storageBucket: "pwa-taco-tuesday.appspot.com",
-  messagingSenderId: "1013636203356"
-};
-
+import { HeaderComponent } from './header/header.component';
+import { NavComponent } from './nav/nav.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EmailComponent,
-    SignupComponent,
-    MembersComponent
+    HeaderComponent,
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

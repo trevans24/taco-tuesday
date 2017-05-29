@@ -1,10 +1,28 @@
-<div class="row">
-	<i class="large material-icons">lock_outline</i>
-
+<div class="row login">
+	<div class="container center">
+		<h5>Welcome to Taco Tuesday</h5>
+		<i class="large material-icons lock">lock_outline</i>
+	</div>
 	<span class="error" *ngIf="error">{{error}}</span>
-
-	<a class="btn" (click)="loginGoogle()" id="google">Login With <i class="fa fa-google"></i></a>
-	<a class="btn" routerLink="/login-email" id="email">Email</a>
-
-	<a class="btn alc" routerLink="/signup" routerLinkActivate="active"><strong>Create New Account</strong></a>
+	<div class="row">
+		<form>
+			<div class="container center">
+				<div class="input-field col s12">
+					<input id="email" type="email" class="validate" placeholder="email@abc.com">
+				</div>
+			</div>
+			<div class="container center">
+				<div class="input-field col s12">
+					<input id="password" type="password" class="validate" placeholder="password">
+				</div>
+				<div class="center">
+					<a class="btn" (click)="login(form)">Login</a>
+					<a class="btn" (click)="signup(form)">Sign Up</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="row center">
+		<a class="btn" (click)="loginGoogle()" id="google">Login With  <i class="fa fa-google"></i></a>
+	</div>
 </div>
