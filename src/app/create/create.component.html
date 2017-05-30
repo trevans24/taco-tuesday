@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+	<h2 class="center">Create a New Taco</h2>
+		<form class="col sm12">
+			<div class="row">
+				<div class="input-field col s12">
+					<input type="text" placeholder="Name of Taco" class="validate" name="name" [(ngModel)]="name">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Taco Shell Type" class="validate"  name="shell" [(ngModel)]="shell">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Meat" class="validate"  name="meat" [(ngModel)]="meat">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Spicy: true or false" class="validate" name="spicy" [(ngModel)]="spicy">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Toppings seperated by commas" class="validate" name="toppings" [(ngModel)]="toppings">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Recipe URL" class="validate" name="recipe" [(ngModel)]="recipe">
+				</div>
+				<div class="input-field col s12">
+					<input type="text" placeholder="Picture URL" class="validate" name="picture" [(ngModel)]="picture">
+				</div>
+				<div class="center">
+					<button class="btn" (click)="addTaco()">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

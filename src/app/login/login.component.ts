@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppModule } from '../app.module';
-import { Router } from '@angular/router';
-import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/filter';
 
 
 @Component({
@@ -12,6 +8,7 @@ import 'rxjs/add/operator/filter';
 })
 export class LoginComponent implements OnInit {
 
+  constructor() { }
 
   ngOnInit() {
   }

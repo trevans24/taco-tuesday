@@ -1,93 +1,70 @@
-'use strict'
-// require express and body parser
-const express = require('express');
-const	app = express();
-const	router = express.Router();
-const	bodyParser = require('body-parser');
+// 'use strict'
+// // require express and body parser
+// const express = require('express');
+// const	app = express();
+// const	router = express.Router();
+// const	bodyParser = require('body-parser');
+// const path = require('path');
+// const morgan = require('morgan');
+// const apiRouter = require('./routes/api');
+// const DB = 'mongodb://localhost/tacos';
+// const mongoose = require('mongoose');
 
-// body parser for JSON data
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// // CONNECT TO DB
+// mongoose.connect(DB, (err) =>{
+// 	if(err) {
+// 		console.log('DB Connection Error');
+// 	}
+// 	console.log('Connected to: ', DB);
+// });
 
-//DB REQUIRE
-const db = require('./models');
+// // body parser for JSON data middle ware
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(morgan('dev'));
 
-app.use('/', (req,res) => {});
+// // API ROUTES
+// app.get('/api', function api_index(req, res){
+// 	res.json({
+// 		message: "Welcome to Taco Tuesday!",
+// 		endpoints: [
+// 		{
+// 			method: 'GET',
+// 			path: '/api/random',
+// 			description: 'Get a random taco'
+// 		},
+// 		{
+// 			method: 'GET', 
+// 			path: '/api/list', 
+// 			description: "show list of tacos and homepage"
+// 		},
+// 		{
+// 			method: 'POST',
+// 			path: '/api/list',
+// 			description: "Add a new taco"
+// 		},
+// 		{
+// 			method: 'SHOW',
+// 			path: '/api/list/:id',
+// 			description: "Show individual taco"
+// 		},
+// 		{
+// 			method: 'PUT',
+// 			path: '/api/list/:id',
+// 			description: "Update your taco"
+// 		},
+// 		{
+// 			method: 'DELETE',
+// 			path: '/api/list/:id',
+// 			description: 'Delete your taco'
+// 		}
+// 		]
+// 	});
+// });
 
-////////// API CALLS ////////////
 
-// INDEX ALL TACOS
-app.get('/api/list', (req, res) => {
-	db.Taco.find()
-	.exec((err, tacos) => {
-		if(err){
-			console.log('Getting Taco Error: ', err);
-		}
-		res.json(tacos);
-	});
-});
+// //DB REQUIRE
+// const db = require('./models');
 
-// SHOW TACO from List
-app.get('/api/list/:id', (req, res) => {
-	db.Taco.findOne({_id: req.params.id}, (err, data) => {
-		if(err){
-			console.log('Show Taco Error: ', err);
-		}
-		res.json(data);
-	});
-});
-
-// POST TACO
-app.post('/api/list', (req, res) => {
-	let newTaco = new db.Taco({
-		name: req.body.name,
-		shell: req.body.shell,
-		meat: req.body.meat,
-		spicy: req.body.spicy,
-		toppings: req.body.toppings,
-		recipe: req.body.recipe,
-		picture: req.body.picture
-	});
-	newTaco.save((err, taco) => {
-		if(err) {
-			console.log('New Taco Error: ', err);
-		}
-		res.json(taco);
-	});
-});
-
-// DELETE TACO
-app.delete('/api/list/:id', (req, res) => {
-	db.Taco.remove({_id: req.body.id}, (err, deletedTaco) =>{
-		if(err) {
-			console.log('Delete Taco Error: ', err);
-		}
-		res.json('Deleted');
-	});
-});
-
-// PUT TACO
-app.put('/api/list/:id', (req, res) => {
-	db.Taco.findOne({_id: req.params.id}, (err, foundTaco) => {
-		if(err) {
-			console.log('Update Taco Error: ', err);
-		}
-		foundTaco.name = req.params.name;
-		foundTaco.shell = req.body.shell;
-		foundTaco.meat = req.body.meat;
-		foundTaco.spicy = req.body.spicy;
-		foundTaco.toppings = req.body.toppings;
-		foundTaco.recipe = req.body.recipe;
-		foundTaco.picture = req.body.picture;
-		foundTaco.save((err, taco) => {
-			if(err) {
-				console.log('Update Taco Save Error: ', err);
-			}
-			res.json(taco);
-		});
-	});
-});
-
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Example app listening at http://localhost:3000/');
-});
+// // Route for API
+// app.use('/api', apiRouter);
