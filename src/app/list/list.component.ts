@@ -7,17 +7,17 @@ import { TacoService } from '../app.service';
   styleUrls: ['./list.component.css'],
   providers: [TacoService]
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
 
-	name: string;
-	shell: string;
-	meat: string;
-	spicy: boolean;
-	toppings: string;
-	recipe: string;
-	picture: string;
+	tacos = [];
 
   constructor(private tacoService: TacoService) { }
   
+  ngOnInit() {
+  	// this.tacoService.getList()
+  	// .subscribe(data =>
+  	// 	console.log(data)
+  	// );
+  }
 
 }

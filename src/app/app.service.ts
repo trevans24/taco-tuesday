@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class TacoService {
 	constructor(private http: Http) {}
 
 	createAuthorizationHeaders(headers: Headers) {
-		headers.append('Access-Control-Allow-Origin','*');
+		headers.append('Access-Control-Allow-Origin', '*');
 		headers.append('Accept', 'application/json');
 		headers.append('Authorization', 'Basic');
 		headers.append('Content-Type', 'application/json');
@@ -23,12 +23,17 @@ export class TacoService {
 			.map(response => response.json);
 	}
 
-	getTaco(url) {
+	getTaco() {
 		console.log('Random Taco');
-		let headers = new Headers();
-		this.createAuthorizationHeaders(headers);
-		return this.http.get('http://taco-randomizer.herokuapp.com/random/', { headers: headers })
-			.map(response => response.json);
+		// sets up an observable to listen for changes
+		return this.http.get('http://taco-randomizer.herokuapp.com/random/')
+			.map((res) => res.json())
+	}
+
+	getList() {
+		console.log('Listed Tacos');
+		return this.http.get('./tacos.json')
+		.map((res) => res.json())
 	}
 
 }
