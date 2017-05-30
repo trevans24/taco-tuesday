@@ -1,80 +1,15 @@
-
-<div class="col s12 m7 card">
-  <h2 class="header">Beef Taco Boats</h2>
+<div class="col s12 m7 card" *ngFor="let taco of tacos">
+  <h2 class="header">{{taco.name}}</h2>
   <div class="card horizontal">
     <div class="card-image">
-      <img src="../../assets/images/beef-taco-boats.jpg">
+      <img src="../../assets/images/logo.svg">
     </div>
     <div class="card-stacked">
       <div class="card-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tempore sitaed...</p>
+        <p>{{taco.toppings}}</p>
       </div>
       <div class="card-action">
-        <a routerLink="/show" class="btn">See Recipe</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col s12 m7 card">
-  <h2 class="header">Jamaican Jerk Steak Tacos</h2>
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src="../../assets/images/jamacian-jerk.jpg">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tempore sitaed...</p>
-      </div>
-      <div class="card-action">
-        <a routerLink="/show" class="btn">See Recipe</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col s12 m7 card">
-  <h2 class="header">Cheesy Chicken Tacos</h2>
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src="../../assets/images/cheesy-chicken.jpg">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tempore sitaed...</p>
-      </div>
-      <div class="card-action">
-        <a routerLink="/show" class="btn">See Recipe</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col s12 m7 card">
-  <h2 class="header">Siracha Shrimp Tacos</h2>
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src="../../assets/images/siracha-shrimp.jpg">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tempore sitaed...</p>
-      </div>
-      <div class="card-action">
-        <a routerLink="/show" class="btn">See Recipe</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="col s12 m7 card">
-  <h2 class="header">Chicken Tacos with Charred Salsa</h2>
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src="../../assets/images/chicken-tacos.jpg">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet obcaecati tempore sitaed...</p>
-      </div>
-      <div class="card-action">
-        <a routerLink="/show" class="btn">See Recipe</a>
+        <a routerLink="#" class="btn">See Recipe</a>
       </div>
     </div>
   </div>

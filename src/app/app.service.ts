@@ -32,7 +32,7 @@ export class TacoService {
 
 	getList() {
 		console.log('Listed Tacos');
-		return this.http.get('./tacos.json')
+		return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json')
 		.map((res) => res.json())
 	}
 
