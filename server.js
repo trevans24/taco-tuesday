@@ -1,21 +1,23 @@
 'use strict'
 // require express and body parser
-const express = require('express'),
-	app = express(),
-	router = express.Router(),
-	bodyParser = require('body-parser');
+const express = require('express');
+const	app = express();
+const	router = express.Router();
+const	bodyParser = require('body-parser');
 
 // body parser for JSON data
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //DB REQUIRE
-const db = require('./models/');
+const db = require('./models');
+
+app.use('/', (req,res) => {});
 
 ////////// API CALLS ////////////
 
 // INDEX ALL TACOS
-app.get('/list', (req, res) => {
+app.get('/api/list', (req, res) => {
 	db.Taco.find()
 	.exec((err, tacos) => {
 		if(err){
@@ -26,7 +28,7 @@ app.get('/list', (req, res) => {
 });
 
 // SHOW TACO from List
-app.get('/list/:id', (req, res) => {
+app.get('/api/list/:id', (req, res) => {
 	db.Taco.findOne({_id: req.params.id}, (err, data) => {
 		if(err){
 			console.log('Show Taco Error: ', err);
@@ -36,7 +38,7 @@ app.get('/list/:id', (req, res) => {
 });
 
 // POST TACO
-app.post('/list', (req, res) => {
+app.post('/api/list', (req, res) => {
 	let newTaco = new db.Taco({
 		name: req.body.name,
 		shell: req.body.shell,
@@ -55,7 +57,7 @@ app.post('/list', (req, res) => {
 });
 
 // DELETE TACO
-app.delete('/list/:id', (req, res) => {
+app.delete('/api/list/:id', (req, res) => {
 	db.Taco.remove({_id: req.body.id}, (err, deletedTaco) =>{
 		if(err) {
 			console.log('Delete Taco Error: ', err);
@@ -65,7 +67,7 @@ app.delete('/list/:id', (req, res) => {
 });
 
 // PUT TACO
-app.put('/list/:id', (req, res) => {
+app.put('/api/list/:id', (req, res) => {
 	db.Taco.findOne({_id: req.params.id}, (err, foundTaco) => {
 		if(err) {
 			console.log('Update Taco Error: ', err);
@@ -84,4 +86,8 @@ app.put('/list/:id', (req, res) => {
 			res.json(taco);
 		});
 	});
+});
+
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Example app listening at http://localhost:3000/');
 });

@@ -42,9 +42,9 @@ let tacoList = [
 }
 ];
 
-db.Taco.remove({}, (err, taco) => {
+db.Taco.remove({}, function(err, taco) {
 	console.log('Removing Tacos');
-	db.Taco.create(tacoList, (err,tacos) => {
+	db.Taco.create(tacoList, function(err,tacos) {
 		if(err){
 			console.log('DB Creation Error: ', err);
 		}

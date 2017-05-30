@@ -17,4 +17,4 @@ const TacoSchema = new Schema ({
 const Taco = mongoose.model('Taco', TacoSchema);
 
 // Export
-module.export = Taco;
+module.exports = Taco;
