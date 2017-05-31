@@ -30,10 +30,10 @@ export class TacoService {
 			.map((res) => res.json());
 	}
 	// GETTING TACOS FROM FIREBASE
-	// getList() {
-	// 	console.log('Listed Tacos');
-	// 	return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json')
-	// 	.map((res) => res.json());
-	// }
+	getList() {
+		console.log('Listed Tacos');
+		return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json')
+		.map((res) => res.json());
+	}
 
 }

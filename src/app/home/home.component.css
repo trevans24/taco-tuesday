@@ -8,11 +8,6 @@ h5 {
 	height: 50vh;
 }
 
-.btn {
-	background-color: #D7263D;
-	margin-top: 2%;
-}
-
 .logo {
   animation: App-logo-spin infinite 15s linear;
   height: 220px;
@@ -22,4 +17,8 @@ h5 {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.buttons {
+	margin-bottom: 5%;
 }
