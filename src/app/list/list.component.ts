@@ -14,11 +14,12 @@ export class ListComponent implements OnInit {
   constructor(private tacoService: TacoService) { }
   
   ngOnInit() {
-  	this.tacoService.getList()
-  	.subscribe(data =>
-  		// console.log(data)
-  		this.tacos = data
-  	);
+  	// GETTING TACOS FOR THE LIST
+  	// this.tacoService.getList()
+  	// .subscribe(data =>
+  	// 	// console.log(data)
+  	// 	this.tacos = data
+  	// );
   }
 
 }

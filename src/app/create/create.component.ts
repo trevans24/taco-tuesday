@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TacoService } from '../app.service';
+//declaring firebase for creation of data to db
+// declare var firebase: any;
 
 @Component({
   selector: 'app-create',
@@ -7,36 +9,27 @@ import { TacoService } from '../app.service';
   styleUrls: ['./create.component.css'],
   providers: [TacoService]
 })
-export class CreateComponent {
-	name: string;
-	shell: string;
-	meat: string;
-	spicy: boolean;
-	toppings: string;
-	recipe: string;
-	picture: string;
+export class CreateComponent implements OnInit {
 
-	constructor(private tacoService: TacoService) {
-		// tacoService.getTacos()
-		// .subscribe(res => {
-		// 	this.tacos = res;
-		// })
+tacos = [];
+
+constructor(private tacoService: TacoService) { }
+
+	ngOnInit() {
+		// this.tacoService.getList()
+		// 	.subscribe((data) => this.tacos = data);
+
+		// this.fbGetData();
+
 	}
 
-	addTaco() {
-		let taco = {
-			name: this.name,
-			shell: this.shell,
-			meat: this.meat,
-			spicy: this.spicy,
-			toppings: this.toppings,
-			recipe: this.recipe,
-			picture: this.picture
-		}
-		this.tacoService.addTaco(taco)
-		.subscribe(data => {
-			console.log('Success ', data);
-		});
-	}
+	// fbGetData() {
+	// 	// Go to DB and point reference at DB to grab
+	// 	// Listen to when a child is added (taco)
+	// 	firebase.database().ref('/')
+	// 		.on('child_added', (snapshot) => {
+	// 			console.log(snapshot);
+	// 		});
+	// }
 
 }
