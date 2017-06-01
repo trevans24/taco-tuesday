@@ -1,10 +1,8 @@
 # TacoTuesday
 
 ## DEPLOYED TO
-[Firebase](https://pwa-taco-tuesday.firebaseapp.com)
-https://pwa-taco-tuesday.firebaseapp.com
-[Heroku](https://taco-tuesday.herokuapp.com)
-https://taco-tuesday.herokuapp.com
+1. [Firebase](https://pwa-taco-tuesday.firebaseapp.com)
+2. [Heroku](https://taco-tuesday.herokuapp.com)
 
 ## Screen Shots
 ![Home Screen](./images/home.png)
