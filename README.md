@@ -124,6 +124,8 @@ Any one and everyone who loves tacos. If they want to:
 ## Wireframes
 ![Wireframes](./Sketch/TacoTuesday.sketch)
 
+If the above link does not work please open the sketch folder and open the sketch file using sketch, with the updated version of sketch I have not been able to show sketch files on readme files.
+
 ## Problems, Unsolved, Major Hurdles
 Angular 2 to connect with Firebase requires a npm package angularfire2 that just recently updated, which at this time does not have any active documented working examples, this inclued the angularfire2 gihub page that talks about the update
 
