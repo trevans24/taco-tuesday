@@ -130,7 +130,7 @@ Any one and everyone who loves tacos. If they want to:
 4. Create Tacos
 
 ## Wireframes
-![Wireframes](./Sketch/TacoTuesday.sketch)
+![Wireframe](./images/wireframe.png)
 
 If the above link does not work please open the sketch folder and open the sketch file using sketch, with the updated version of sketch I have not been able to show sketch files on readme files.
 
