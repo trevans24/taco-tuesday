@@ -1,10 +1,10 @@
-import { TacoTuesPage } from './app.po';
+import { TacoTuesdayChangePage } from './app.po';
 
-describe('taco-tues App', function() {
-  let page: TacoTuesPage;
+describe('taco-tuesday-change App', function() {
+  let page: TacoTuesdayChangePage;
 
   beforeEach(() => {
-    page = new TacoTuesPage();
+    page = new TacoTuesdayChangePage();
   });
 
   it('should display message saying app works', () => {
