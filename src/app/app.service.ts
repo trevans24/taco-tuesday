@@ -18,8 +18,8 @@ export class TacoService {
 
 	addTaco(name: string, shell: string, meat: string, toppings: string, recipe: string, picture: string) {
 		console.log(name);
-		// let headers = new Headers();
-		// this.createAuthorizationHeaders(headers);
+		let headers = new Headers();
+		this.createAuthorizationHeaders(headers);
 		return this.http.post('https://pwa-taco-tuesday.firebaseio.com/.json', JSON.stringify({
 			name: name,
 			shell: shell,
@@ -39,7 +39,9 @@ export class TacoService {
 	// GETTING TACOS FROM FIREBASE
 	getList() {
 		console.log('Listed Tacos');
-		return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json')
+		let headers = new Headers();
+		this.createAuthorizationHeaders(headers);
+		return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json', { headers: headers })
 		.map((res) => res.json());
 	}
 
