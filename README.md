@@ -22,6 +22,11 @@
 6. Materialize CSS
 7. GOOGLE ON GOOGLE ON GOOGLE
 
+APIs:
+1. Google Maps
+2. Taco-Randomizer
+3. Firebase
+
 For more on what Angular CLI and what you can do with it after creating a new Build (ng new project-name) check out below...
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
