@@ -56,4 +56,4 @@ export class TacoService {
     storageBucket: "d-people-party.appspot.com",
     messagingSenderId: "165937787354"
   };
-  firebase.initializeApp(config);
+  // firebase.initializeApp(config);
