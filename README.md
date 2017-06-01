@@ -98,7 +98,7 @@ ng serve --prod
 ```
 
 Build a Product Version for deployment
-``command line
+```command line
 ng build --prod
 ```
 
