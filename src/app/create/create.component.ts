@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TacoService } from '../app.service';
-//declaring firebase for creation of data to db
-declare var firebase: any;
 
 @Component({
   selector: 'app-create',
@@ -15,21 +13,20 @@ tacos = [];
 
 constructor(private tacoService: TacoService) { }
 
-	ngOnInit() {
-		this.tacoService.getList()
-			.subscribe((data) => this.tacos = data);
+	ngOnInit() {}
 
-		this.fbGetData();
-
+	addTaco(name: string, shell: string, meat: string, toppings: string, recipe: string, picture: string): void {
+		name = name.trim();
+		shell  = shell.trim();
+		meat = meat.trim();
+		toppings = toppings.trim();
+		recipe = recipe.trim();
+		picture = picture.trim();
+		if (!name || !shell || !meat || !toppings || !recipe || !picture) {
+			return;
+		}
+		this.tacoService.addTaco(name, shell, meat, toppings, recipe, picture);
 	}
 
-	fbGetData() {
-		// Go to DB and point reference at DB to grab
-		// Listen to when a child is added (taco)
-		firebase.database().ref('/')
-			.on('child_added', (snapshot) => {
-				console.log(snapshot);
-			});
-	}
 
 }

@@ -4,28 +4,25 @@
 		<form class="col sm12">
 			<div class="row">
 				<div class="input-field col s12">
-					<input type="text" placeholder="Name of Taco" class="validate" name="name" [(ngModel)]="name">
+					<input type="text" placeholder="Name of Taco" class="validate" name="name" [(ngModel)]="name" #tacoName>
 				</div>
 				<div class="input-field col s12">
-					<input type="text" placeholder="Taco Shell Type" class="validate"  name="shell" [(ngModel)]="shell">
+					<input type="text" placeholder="Taco Shell Type" class="validate"  name="shell" [(ngModel)]="shell" #tacoShell>
 				</div>
 				<div class="input-field col s12">
-					<input type="text" placeholder="Meat" class="validate"  name="meat" [(ngModel)]="meat">
+					<input type="text" placeholder="Meat" class="validate"  name="meat" [(ngModel)]="meat" #tacoMeat>
 				</div>
 				<div class="input-field col s12">
-					<input type="text" placeholder="Spicy: true or false" class="validate" name="spicy" [(ngModel)]="spicy">
+					<input type="text" placeholder="Toppings seperated by commas" class="validate" name="toppings" [(ngModel)]="toppings" #tacoToppings>
 				</div>
 				<div class="input-field col s12">
-					<input type="text" placeholder="Toppings seperated by commas" class="validate" name="toppings" [(ngModel)]="toppings">
+					<input type="text" placeholder="Recipe URL" class="validate" name="recipe" [(ngModel)]="recipe" #tacoRecipe>
 				</div>
 				<div class="input-field col s12">
-					<input type="text" placeholder="Recipe URL" class="validate" name="recipe" [(ngModel)]="recipe">
-				</div>
-				<div class="input-field col s12">
-					<input type="text" placeholder="Picture URL" class="validate" name="picture" [(ngModel)]="picture">
+					<input type="text" placeholder="Picture URL" class="validate" name="picture" [(ngModel)]="picture" #tacoPicture>
 				</div>
 				<div class="center">
-					<button class="btn" (click)="addTaco()">Submit</button>
+					<button class="btn" (click)="addTaco(tacoName.value, tacoShell.value, tacoMeat.value, tacoToppings.value, tacoRecipe.value, tacoPicture.value)">Submit</button>
 				</div>
 			</div>
 		</form>

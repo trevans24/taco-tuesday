@@ -30,7 +30,7 @@ export class RandomComponent implements OnInit {
   	this.tacoService.getTaco()
 		// subscribe to get the data from the api
 		.subscribe((data) => {
-			// console.log(data)
+			console.log(data);
 			// this.tacos = data.base_layer
 			this.baseName = data.base_layer.name,
 			this.baseRecipe = data.base_layer.recipe,
