@@ -17,6 +17,7 @@ import { AgmCoreModule } from '@agm/core';
 import { CreateComponent } from './create/create.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShowComponent } from './show/show.component';
+import { TacoComponent } from './taco/taco.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ShowComponent } from './show/show.component';
     LoginComponent,
     CreateComponent,
     FooterComponent,
-    ShowComponent
+    ShowComponent,
+    TacoComponent
   ],
   imports: [
     BrowserModule,

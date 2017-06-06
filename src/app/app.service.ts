@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
-declare const firebase: any;
 
 @Injectable()
 
@@ -11,6 +10,7 @@ export class TacoService {
 
 	createAuthorizationHeaders(headers: Headers) {
 		headers.append('Access-Control-Allow-Origin', '*');
+		headers.append('cache-control', 'no-cache');
 		headers.append('Accept', 'application/json');
 		headers.append('Authorization', 'Basic');
 		headers.append('Content-Type', 'application/json');
@@ -18,8 +18,6 @@ export class TacoService {
 
 	addTaco(name: string, shell: string, meat: string, toppings: string, recipe: string, picture: string) {
 		console.log(name);
-		let headers = new Headers();
-		this.createAuthorizationHeaders(headers);
 		return this.http.post('https://pwa-taco-tuesday.firebaseio.com/.json', JSON.stringify({
 			name: name,
 			shell: shell,
@@ -40,22 +38,11 @@ export class TacoService {
 	getList() {
 		console.log('Listed Tacos');
 		let headers = new Headers();
+		console.log(headers);
 		this.createAuthorizationHeaders(headers);
-		return this.http.get('https://pwa-taco-tuesday.firebaseio.com/.json', { headers: headers })
+		return this.http.get('http://taco-tuesday-db.herokuapp.com/api/tacos', { headers: headers })
 		.map((res) => res.json());
 	}
 
 
 }
-
-// ALEX API FOR FIREBASE
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBXlW_OcuWYsvQLHHYhYAs6ofEGHAFNRFU",
-    authDomain: "d-people-party.firebaseapp.com",
-    databaseURL: "https://d-people-party.firebaseio.com",
-    projectId: "d-people-party",
-    storageBucket: "d-people-party.appspot.com",
-    messagingSenderId: "165937787354"
-  };
-  // firebase.initializeApp(config);
