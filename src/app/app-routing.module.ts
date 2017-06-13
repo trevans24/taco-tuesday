@@ -30,7 +30,7 @@ const routes: Routes = [
 		component: ListComponent
 	},
 	{
-		path: 'show',
+		path: ':id',
 		component: ShowComponent
 	},
 	{

@@ -2,14 +2,14 @@
   <h3 class="header center">{{taco.name}}</h3>
   <div class="card horizontal">
     <div class="card-image">
-      <img src="https://clipartion.com/wp-content/uploads/2015/11/fish-tacos-png-830x688.png">
+      <img src="{{taco.picture}}">
     </div>
     <div class="card-stacked">
       <div class="card-content">
         <p>{{taco.toppings}}</p>
       </div>
       <div class="card-action">
-        <a routerLink="#" class="btn">See Recipe</a>
+        <a routerLink="/{{taco._id}}" class="btn">See Recipe</a>
       </div>
     </div>
   </div>

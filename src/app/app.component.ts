@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
-// import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
+import { ButtonComponent } from './button/button.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css', './nav/nav.component.css', './footer/footer.component.css'],
-  entryComponents: [NavComponent, FooterComponent],
+  styleUrls: ['./app.component.css', './nav/nav.component.css', './button/button.component.css'],
+  entryComponents: [NavComponent, ButtonComponent],
   animations: []
 })
 export class AppComponent {

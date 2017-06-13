@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,25 +14,21 @@ import { RandomComponent } from './random/random.component';
 // MAP
 import { AgmCoreModule } from '@agm/core';
 import { CreateComponent } from './create/create.component';
-import { FooterComponent } from './footer/footer.component';
 import { ShowComponent } from './show/show.component';
-import { TacoComponent } from './taco/taco.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HeaderComponent,
     NavComponent,
     HomeComponent,
     FindComponent,
     ListComponent,
     RandomComponent,
-    LoginComponent,
     CreateComponent,
-    FooterComponent,
     ShowComponent,
-    TacoComponent
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

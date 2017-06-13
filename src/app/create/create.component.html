@@ -22,7 +22,7 @@
 					<input type="text" placeholder="Picture URL" class="validate" name="picture" [(ngModel)]="picture" #tacoPicture>
 				</div>
 				<div class="center">
-					<button class="btn" (click)="addTaco(tacoName.value, tacoShell.value, tacoMeat.value, tacoToppings.value, tacoRecipe.value, tacoPicture.value)">Submit</button>
+					<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" (click)="addTaco(name, shell, meat, toppings, recipe, picture)">add</i></a>
 				</div>
 			</div>
 		</form>

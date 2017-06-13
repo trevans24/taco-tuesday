@@ -17,8 +17,8 @@ export class ListComponent implements OnInit {
   	// GETTING TACOS FOR THE LIST
   	this.tacoService.getList()
   	.subscribe(data =>
-  		console.log(data)
-  		// this.tacos = data
+  		// console.log(data)
+  		this.tacos = data
   	);
   }
 

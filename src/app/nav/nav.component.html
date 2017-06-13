@@ -1,7 +1,22 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default container-fluid">
   <div class="container-fluid">
     <div class="navbar-header">
-      <img src="../../logo.svg" alt="taco" class="logo">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="../../logo.svg" alt="taco" class="logo" routerLink="/">
     </div>
   </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/" class="nav-text">Home</a></li>
+        <li><a routerLink="/list" class="nav-text">List</a></li>
+        <li><a routerLink="/random" class="nav-text">Random</a></li>
+        <li><a routerLink="/create" class="nav-text">Create</a></li>
+        <li><a routerLink="/find" class="nav-text">Find</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
 </nav>
