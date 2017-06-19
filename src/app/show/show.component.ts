@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { TacoService } from '../app.service';
+import { Http, URLSearchParams } from '@angular/http';
 
 @Component({
   selector: 'app-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.css']
+  styleUrls: ['./show.component.css'],
+  providers: [TacoService]
 })
 export class ShowComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http, private tacoService: TacoService) { }
 
   ngOnInit() {
+  	this.tacoService.getTaco()
+  	.subscribe((data) => {
+  		console.log(data);
+  	});
   }
 
 }

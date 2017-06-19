@@ -27,7 +27,7 @@ export class RandomComponent implements OnInit {
 
   // THIS MAKES SURE COMPONENT IS LOADED BEFORE YOU DO ANY DATA OR FUNCTIONS
   ngOnInit() {
-  	this.tacoService.getTaco()
+  	this.tacoService.getRandomTaco()
 		// subscribe to get the data from the api
 		.subscribe((data) => {
 			console.log(data);
