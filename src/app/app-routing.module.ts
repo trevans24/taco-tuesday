@@ -30,12 +30,12 @@ const routes: Routes = [
 		component: ListComponent
 	},
 	{
-		path: ':id',
-		component: ShowComponent
-	},
-	{
 		path: 'random',
 		component: RandomComponent
+	},
+	{
+		path: ':id',
+		component: ShowComponent
 	}
 ]
 

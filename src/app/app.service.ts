@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+
+import { Taco } from '../taco';
 
 @Injectable()
 
@@ -9,6 +11,7 @@ export class TacoService {
 
 	// SET URL STRING
 	url: string = 'http://taco-tuesday-db.herokuapp.com/api/tacos';
+	randomUrl: string = 'http://taco-randomizer.herokuapp.com/random/';
 
 	// SET HTTP REQ to PRIVATE
 	constructor(private http: Http) {}
@@ -37,7 +40,7 @@ export class TacoService {
 	// GETTING TACOS FROM RANDOM API
 	getRandomTaco() {
 		// sets up an observable to listen for changes
-		return this.http.get('http://taco-randomizer.herokuapp.com/random/')
+		return this.http.get(this.randomUrl)
 			.map((res) => res.json());
 	}
 	// GETTING LIST OF TACOS FROM DB on HEROKU
