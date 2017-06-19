@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, URLSearchParams } from '@angular/http';
+import { Http, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
-import { Taco } from '../taco';
+import { Taco } from './taco';
 
 @Injectable()
 
@@ -56,7 +56,12 @@ export class TacoService {
 		// Set Headers for Req
 		let headers = new Headers();
 		this.createAuthorizationHeaders(headers);
-		return this.http.get(this.url + tacoId, { headers: headers })
+		// set params for ID
+		let tacoParams = new URLSearchParams();
+		tacoParams.append('id', tacoId);
+		// set options of params and headers
+		let options = new RequestOptions({ headers: headers, params: tacoParams });
+		return this.http.get(this.url, options)
 		.map((res) => res.json());
 	}
 
