@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   
   ngOnInit() {
   	// GETTING TACOS FOR THE LIST
-  	this.tacoService.getList()
+  	this.tacoService.getAllTacos()
   	.subscribe(data =>
   		// console.log(data)
   		this.tacos = data

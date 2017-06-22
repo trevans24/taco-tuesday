@@ -15,10 +15,10 @@ export class ShowComponent implements OnInit {
   constructor(private http: Http, private tacoService: TacoService) { }
 
   ngOnInit() {
-  	this.tacoService.getTaco(tacoId)
-  	.subscribe((data) => {
-  		console.log(data);
-  	});
+  	// this.tacoService.getTaco(tacoId)
+  	// .subscribe((data) => {
+  	// 	console.log(data);
+  	// });
   }
 
 }

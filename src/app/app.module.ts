@@ -29,6 +29,7 @@ import { ButtonComponent } from './button/button.component';
     CreateComponent,
     ShowComponent,
     ButtonComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
