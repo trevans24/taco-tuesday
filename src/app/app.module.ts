@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; //import module for routing
 import { HomeComponent } from './home/home.component';
 import { FindComponent } from './find/find.component';
 import { ListComponent } from './list/list.component';
@@ -35,7 +35,7 @@ import { ButtonComponent } from './button/button.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule, //declare import for app to use
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCPqCXeTyW5s4MiWTf6kzwm-r58azGK18Q'
     }
